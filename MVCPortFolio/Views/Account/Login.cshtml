@@ -1,4 +1,4 @@
-﻿@model MVCPortFolio.Models.Account
+﻿@model MVCPortFolio.Models.User
 
 @{
     ViewData["Title"] = "Index";
@@ -18,26 +18,31 @@
                     </div>
 
                     <div class="wrapper">
-                        <form asp-action="Login" class="form-signin">
+                        <form class="form-signin" method="post">
                             <h2 class="form-signin-heading">Login</h2>
-                            <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
+                            <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" autofocus="" />
                             <span asp-validation-for="Email" class="text-danger"></span>
-                            <input asp-for="Password" type="password" class="form-control" name="password" placeholder="Password" required="" />
+
+                            <input asp-for="Password" type="password" class="form-control" name="password" placeholder="Password" style="margin-bottom:0"/>
                             <span asp-validation-for="Password" class="text-danger"></span>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+                            <button asp-action="Login" class="btn btn-lg btn-primary btn-block" type="submit"
+                                    style="margin-top:10px">Login</button>
                             <div class="label-primary"
                                  style="text-align:center; color:white;
                                         margin-top:10px; border-radius:5px;
+                                        margin-bottom:10px;
                                         font-weight:bolder;">
                                 @if (ViewBag.Message != null)
                                 {
                                     <span>@ViewBag.Message</span>
                                 }
                             </div>
+                            <button asp-action="SignUp" class="btn btn-lg btn-primary btn-block">Sign-Up</button>
                         </form>
-                        <div>
-                            <button asp-controller="Account" asp-action="SignUp" class="btn btn-lg btn-primary btn-block">Sign-Up</button>
-                        </div>
+                        <form >
+                            
+                        </form>
                     </div>
                 </div> <!-- /.col-xs-12 -->
 

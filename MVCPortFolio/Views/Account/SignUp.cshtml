@@ -1,4 +1,4 @@
-﻿@model MVCPortFolio.Models.Account
+﻿@model MVCPortFolio.Models.User
 
 @{
     ViewData["Title"] = "Index";
@@ -9,7 +9,7 @@
     <div class="pt-table">
 
         <div class="pt-tablecell page-services relative">
-            <a asp-area="" asp-controller="Home" asp-action="Home" class="page-close"><i class="tf-ion-close"></i></a>
+            <a asp-area="" asp-controller="Account" asp-action="Login" class="page-close"><i class="tf-ion-arrow-return-left"></i></a>
             <div class="container">
                 <div class="col-xs-12 col-lg-offset-1 col-lg-10">
                     <div class="page-title text-center">
@@ -18,25 +18,22 @@
                     </div>
 
                     <div class="wrapper">
-                        <form asp-action="Login" class="form-signin">
-                            <h2 class="form-signin-heading">Login</h2>
-                            <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
+                        <form asp-action="SignUp" class="form-signin">
+                            <h2 class="form-signin-heading">SignUp</h2>
+
+                            <input asp-for="UserName" type="text" class="form-control" name="UserName"
+                                   placeholder="UserName" autofocus="" />
+
+                            <input asp-for="Email" type="email" class="form-control" name="Email"
+                                   placeholder="Email" style="margin-bottom:0" />
                             <span asp-validation-for="Email" class="text-danger"></span>
-                            <input asp-for="Password" type="password" class="form-control" name="password" placeholder="Password" required="" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                            <div class="label-primary"
-                                 style="text-align:center; color:white;
-                                        margin-top:10px; border-radius:5px;
-                                        font-weight:bolder;">
-                                @if (ViewBag.Message != null)
-                                {
-                                    <span>@ViewBag.Message</span>
-                                }
-                            </div>
+
+                            <input asp-for="Password" type="password" class="form-control" name="Password" placeholder="Password" />
+
                             <div>
                                 <button asp-controller="Account" asp-action="SignUp" class="btn btn-lg btn-primary btn-block" type="submit">Sign-Up</button>
                             </div>
+
                         </form>
                     </div>
                 </div> <!-- /.col-xs-12 -->

@@ -20,48 +20,23 @@ namespace MVCPortFolio.Controllers
             _context = context;
         }
 
+        [HttpGet]
         /// <summary>
         /// Get Login 뷰
         /// </summary>
         /// <returns></returns>
-        public IActionResult Login()
-        {
-            var account = new Account();
-            return View(account);
-
-        }
-        /// <summary>
-        /// Get 회원가입 뷰
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult SignUp()
+        public async Task<IActionResult> Login()
         {
             var user = new User();
             return View(user);
-        }
 
-        /// <summary>
-        /// DB에 저장하는 회원가입페이지
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public async Task<IActionResult> SignUp([Bind("UserNo, UserName,Email,Password")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Login", "Account");
-            }
-            return View(user);
         }
-
 
         [HttpPost]
         public async Task<IActionResult> Login([Bind("Email,Password")] User user)
         {
-            if (ModelState.IsValid)
+
+            if (!ModelState.IsValid)
             {
                 var result = checkAccount(user.Email, user.Password);
                 if (result == null)
@@ -77,7 +52,9 @@ namespace MVCPortFolio.Controllers
                     return RedirectToAction("Home", "Home");
                 }
             }
+
             return View("Login");
+
         }
 
         /// <summary>
@@ -101,5 +78,35 @@ namespace MVCPortFolio.Controllers
             return RedirectToAction("Home", "Home"); // Home/Home으로 이동
         }
 
+        [HttpGet]
+        /// <summary>
+        /// Get 회원가입 뷰
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> SignUp()
+        {
+            var user = new User();
+            return View(user);
+        }
+
+        /// <summary>
+        /// DB에 저장하는 회원가입페이지
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User user)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(user);
+                await _context.SaveChangesAsync();
+                ViewBag.Message = "회원가입되었습니다!";
+                return RedirectToAction("Login", "Account");
+            }
+           
+            return View(user);
+        }
     }
 }
