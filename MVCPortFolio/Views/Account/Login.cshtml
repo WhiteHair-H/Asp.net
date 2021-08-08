@@ -1,0 +1,62 @@
+﻿@model MVCPortFolio.Models.Account
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Login.cshtml";
+}
+
+<section class="site-wrapper">
+    <div class="pt-table">
+
+        <div class="pt-tablecell page-services relative">
+            <a asp-area="" asp-controller="Home" asp-action="Home" class="page-close"><i class="tf-ion-close"></i></a>
+            <div class="container">
+                <div class="col-xs-12 col-lg-offset-1 col-lg-10">
+                    <div class="page-title text-center">
+                        <h2>Awesome <span class="primary">Services</span></h2>
+                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica,quam nunc putamus parum claram anteposuerit.</p>
+                    </div>
+
+                    <div class="wrapper">
+                        <form asp-action="Login" class="form-signin">
+                            <h2 class="form-signin-heading">Login</h2>
+                            <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                            <input asp-for="Password" type="password" class="form-control" name="password" placeholder="Password" required="" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                            <div class="label-primary"
+                                 style="text-align:center; color:white;
+                                        margin-top:10px; border-radius:5px;
+                                        font-weight:bolder;">
+                                @if (ViewBag.Message != null)
+                                {
+                                    <span>@ViewBag.Message</span>
+                                }
+                            </div>
+                        </form>
+                        <div>
+                            <button asp-controller="Account" asp-action="SignUp" class="btn btn-lg btn-primary btn-block">Sign-Up</button>
+                        </div>
+                    </div>
+                </div> <!-- /.col-xs-12 -->
+
+            </div> <!-- /.container -->
+
+
+            <nav class="page-nav clear">
+                <div class="container">
+                    <div class="flex flex-middle space-between">
+                        @*todo : 이전 페이지 , 다음페이지 컨트롤페이지 넣어주기*@
+                        <span class="prev-page"><a asp-area="" asp-controller="Board" asp-action="Index" class="link">&larr; BOARD Page</a></span>
+                        <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                        <span class="next-page"><a asp-area="" asp-controller="Contact" asp-action="Index" class="link">CONTACT Page &rarr;</a></span>
+                    </div>
+                </div>
+                <!-- /.page-nav -->
+            </nav>
+            <!-- /.container -->
+
+        </div> <!-- /.pt-tablecell -->
+    </div> <!-- /.pt-table -->
+</section> <!-- /.site-wrapper -->

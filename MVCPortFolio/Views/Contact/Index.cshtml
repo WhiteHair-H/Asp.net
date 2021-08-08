@@ -1,0 +1,157 @@
+﻿@model MVCPortFolio.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Contact.cshtml";
+}
+
+@* 전송버튼을 눌렀을 때 화면에 반응이 없을 때 추가해야하는 Head부분 *@
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/png"
+          href="http://example.com/myicon.png">
+</head>
+
+
+<main class="site-wrapper">
+
+    <div class="pt-table">
+        <div class="pt-tablecell page-contact relative">
+            <!-- .close -->
+            <a asp-area="" asp-controller="Home" asp-action="Home" class="page-close"><i class="tf-ion-close"></i></a>
+            <!-- /.close -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                        <div class="page-title text-center">
+                            <h2>Get in  <span class="primary">touch</span> <span class="title-bg">Contact</span></h2>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                        <div class="contact-block">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="tf-envelope2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:my_pddana@naver.com">pddana@naver.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.contact-block -->
+                        <div class="contact-block">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="tf-phone2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:+000-1111-2222">+000-1111-2222</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.contact-block -->
+                        <div class="contact-block">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="tf-mobile"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h4>Portfolio</h4>
+                                    <p><a href="https://whitehair-h.github.io/PortFolio/">https://whitehair-h.github.io/PortFolio/</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.contact-block -->
+
+                        <ul class="contact-social">
+                            <li>
+                                <span class="contact-social-hex"></span>
+                                <a href="www.fb.com/themefisher"><i class="tf-ion-social-facebook"></i></a>
+                            </li>
+                            <li>
+                                <span class="contact-social-hex"></span>
+                                <a href="www.twitter.com/themefisher"><i class="tf-ion-social-twitter"></i></a>
+                            </li>
+                            <li>
+                                <span class="contact-social-hex"></span>
+                                <a href="#"><i class="tf-ion-social-google"></i></a>
+                            </li>
+                            <li>
+                                <span class="contact-social-hex"></span>
+                                <a href="www.dribbble.com/themefisher"><i class="tf-ion-social-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1 col-lg-offset-2">
+                        <div class="section-title clear">
+                            <h3>Send me a message</h3>
+                            <span class="bar-dark"></span>
+                            <span class="bar-primary"></span>
+                        </div>
+
+                        @*메시지를 보내는 공간*@
+                        <form id="contact-form" class="row contact-form no-gutter" asp-action="Index" method="post">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="input-field name">
+                                    <span class="input-icon" id="name" ><i class="tf-profile-male"></i></span>
+                                    <input type="text" class="form-control" asp-for="Name"  placeholder="Enter your name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div> <!-- ./col- -->
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="input-field email">
+                                    <span class="input-icon" id="email"><i class="tf-envelope2"></i></span>
+                                    <input type="email" class="form-control" asp-for="Email" name="email" placeholder="Your email address">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div> <!-- ./col- -->
+                            
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="input-field message">
+                                    <span class="input-icon"><i class="tf-pencil2"></i></span>
+                                    <textarea name="Contents" id="message" asp-for="Contents" class="form-control" placeholder="Write your message"></textarea>
+
+                                </div>
+                            </div> <!-- ./col- -->
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="input-field">
+                                    <span class="btn-border">
+                                        <button type="submit" class="btn btn-primary btn-custom-border text-uppercase">Send Message now</button>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    @if (ViewBag.Message != null)
+                                    {
+                                        <span>@ViewBag.Message</span>
+                                    }
+                                </div>
+                                <div class="msg-failed">Something went wrong, please try again later</div>
+                            </div> <!-- ./col- -->
+                        </form> <!-- /.row -->
+                    </div> <!-- /.col- -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+
+            <nav class="page-nav clear">
+                <div class="container">
+                    <div class="flex flex-middle space-between">
+                        @*todo : 이전 페이지 , 다음페이지 컨트롤페이지 넣어주기*@
+                        <span class="prev-page"><a asp-area="" asp-controller="Home" asp-action="Login" class="link">&larr; LOGIN Page</a></span>
+                        <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                        <span class="next-page"><a asp-area="" asp-controller="Home" asp-action="Home" class="link">HOME Page &rarr;</a></span>
+                    </div>
+                </div>
+                <!-- /.page-nav -->
+            </nav>
+            <!-- /.container -->
+
+        </div> <!-- /.pt-tablecell -->
+    </div> <!-- /.pt-table -->
+</main> <!-- /.site-wrapper -->

@@ -1,0 +1,56 @@
+﻿bootstrap MVC
+
+    7/30
+    1. 부트스트랩 다운로드
+    2. MVC 솔루션 만들기
+    3. wwwroot에 CSS,js 등 파일 삽입
+    4. controller에서 index 밑에 복붙을 통하여 뷰이름 오른쪽 클릭후 뷰 추가(강력한 뷰 클릭)
+    5. Home 을 중심으로 생성할 뷰 생성
+    6. Home.cshtml에서 asp-area="" asp-controller="Home" asp-action="Welcome" 추가하여 각각 페이지에 들어갈수있게 추가해주기
+    7. css가 먹히지 않을 때 파일앞에 ~/ 통해서 명시해주기
+    8/1
+    8. 각각 페이지에 이전, 다음페이지 asp-controller="Home" asp-action="resume" 추가하여 페이지 넘어갈수 있게 하기
+    9. MS-SQL에서 게시판 DB설계
+    10. appsetting에서 DataSource 들고기
+    11. Controllers에서 컨트롤 추가 - entityFrameWork를 통한 MVC 컨트롤 생성
+    12. X.PagedList.Mvc.Core패키지 다운로드 후 BoardController.cs - ToPagedListAsync 추가
+    13. MVCPortFolioContext.cs에서 Microsoft.AspNetCore.Identity.EntityFrameworkCore 패키지 다운로드후 public class MVCPortFolioContext : IdentityDbContext <- 추가
+    14. Cannot open database 에러 뜰시 - appsettings.json에서 Server=(localdb)\\mssqllocaldb~~~ 지우고
+    Startup.cs에서 Configuration.GetConnectionString("MVCPortFolioContext"))를 DefaultConnection로 바꿔주기
+    15. 개체이름이 유효하지않습니다 오류 - DB이름 확인하기
+    16. rendorbody 오류는 @RenderBody() 생성해주기
+    17. cshtml나오지 않을 경우 css, javascript 추가
+    18. index.cshtml에 위치 잡아주기 - @RenderBody()는 무조건 레이아웃에만 설정
+    8/2
+    19. 게시판 controller에서 조회수, 날짜 readonly로 수정
+    20. 인덱스 추가(DB = id)
+    8/4 ~ 5
+    21. Context-index : IEnumerable 오류 뜰시 맨위 IEnumerable 제거후 asp-for 입력
+    22. @* 전송버튼을 눌렀을 때 화면에 반응이 없을 때 추가해야하는 Head부분 *@
+        <head profile="http://www.w3.org/2005/10/profile">
+            <link rel="icon"
+                    type="image/png"
+                    href="http://example.com/myicon.png">
+        </head>
+    23. Contact페이지에서 이름, 이메일, 내용 입력하고 전송했을 때 오류가 발생하는경우
+        microsoft.aspNetCore.Identity.UI 누겟패키지 설치
+
+        Or Message 칸 제거 -> <span asp-validation-for="Contents" class="text-danger"></span>
+            and name 바꿔주기 -> textarea name="Contents"
+    24. Contact 컨트롤 DB 연동작업 성공
+    25. 로그인 컨트롤 창, DB 연동 작업 완료
+    26. 로그인후 로그아웃 버튼, return하는 using 문 및 함수
+        @using Microsoft.AspNetCore.Http
+        @inject IHttpContextAccessor hca
+    27. 로그아웃 클릭시 알림창 추가
+
+    Big todo
+    1. 아이콘, 글, 글자크기 , 사진, 이전, 다음 페이지 글자 등 디자인 요소 수정
+    2. 로그인 컨트롤 생성 및 DB연결작업
+    3. 각 페이지 타이틀 수정
+    4. 회원가입 컨트롤 창 만들어보기?
+    5. 
+
+    먼저해야할 작업
+    1. 로그인 페이지에서 회원가입 페이지 생성후
+    2. 회원가입 모델 생성후 check여부에서 회원가입 모델과 로그인 모델과 비교하여 로그인하기

@@ -1,0 +1,53 @@
+﻿@model MVCPortFolio.Models.Board
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Home/Board.cshtml";
+}
+
+<div style="margin:0 300px 0 300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                <div class="page-title text-center">
+                    <h2><span class="primary">Board</span></h2>
+                    <p>불편, 문의사항을 적어주세요!</p>
+                    <hr />
+
+                </div>
+                <div class="row">
+                    @*컬럼 길이 설정하는 클래스 col-md-6 *@
+                    <div class="col-md-6">
+                        <form asp-action="Create" style="color: white; font-size: 20px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Subject" class="control-label" >주제</label>
+                                <input asp-for="Subject" class="form-control" />
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Writer" class="control-label">작성자</label>
+                                <input asp-for="Writer" class="form-control" />
+                                <span asp-validation-for="Writer" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Contents" class="control-label">내용</label>
+                                <input asp-for="Contents" class="form-control" />
+                                <span asp-validation-for="Contents" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="올리기" class="btn btn-default"-/>
+                            </div>
+                            <div class="form-group">
+                                <a asp-controller="Board" asp-action="Index" class="btn-primary" style="background-color:cornflowerblue">뒤로</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div>
+
+
+

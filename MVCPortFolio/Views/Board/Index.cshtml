@@ -1,0 +1,104 @@
+﻿@model IEnumerable<MVCPortFolio.Models.Board>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Board.cshtml";
+}
+
+
+
+<main class="site-wrapper">
+    <div class="pt-table">
+        <div class="pt-tablecell page-quotes relative">
+            <!-- .close -->
+            <a asp-area="" asp-controller="Home" asp-action="Home"
+               class="page-close"><i class="tf-ion-close"></i></a>
+            <!-- /.close -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                        <div class="page-title text-center">
+                            <h2><span class="primary">Board</span></h2>
+                            <h4>게시판을 적는 공간입니다.</h4>
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+
+
+            <div style="margin: 0 300px 0 300px; text-align: center;">
+                <p class="btn btn-default pull-right" style="color:black; margin-bottom:10px;">
+                    <a asp-action="Create">글쓰기</a>
+                </p>
+                <table class="table table-bordered" style="color:white; ">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;">
+                                번호@*@Html.DisplayNameFor(model => model.Subject)*@
+                            </th>
+                            <th style="text-align:center;">
+                                제목@*@Html.DisplayNameFor(model => model.Contents)*@
+                            </th>
+                            <th style="text-align:center;">
+                                작성자@*@Html.DisplayNameFor(model => model.Writer)*@
+                            </th>
+                            <th style="text-align:center;">
+                                등록일@*@Html.DisplayNameFor(model => model.RegDate)*@
+                            </th>
+                            <th style="text-align:center;">
+                                조회수@*@Html.DisplayNameFor(model => model.ReadCount)*@
+                            </th>
+                            <th style="text-align:center;">
+                                구분
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id)
+                                </td>
+                                <td>
+                                    @*제목을 눌렀을 때 Details칸으로 이동하게 만듬*@
+                                    <a asp-action="Details" asp-route-id="@item.id">
+                                        @Html.DisplayFor(modelItem => item.Subject)
+                                    </a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Writer)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RegDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ReadCount)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.id">수정</a> /
+                                    <a asp-action="Details" asp-route-id="@item.id">자세히</a> /
+                                    <a asp-action="Delete" asp-route-id="@item.id">삭제</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <nav class="page-nav clear">
+                <div class="container">
+                    <div class="flex flex-middle space-between">
+                        <span class="prev-page"><a asp-area="" asp-controller="Home" asp-action="Work" class="link">&larr; WORK Page</a></span>
+                        <span class="copyright hidden-xs">Copyright &copy; 1996 Dana, All Rights Reserved.</span>
+                        <span class="next-page"><a asp-area="" asp-controller="Home" asp-action="Login" class="link">LOGIN Page &rarr;</a></span>
+                    </div>
+                </div>
+                <!-- /.page-nav -->
+            </nav>
+            <!-- /.container -->
+
+        </div> <!-- /.pt-tablecell -->
+    </div> <!-- /.pt-table -->
+</main> <!-- /.site-wrapper -->

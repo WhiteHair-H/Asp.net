@@ -1,0 +1,63 @@
+﻿@model MVCPortFolio.Models.Board
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Home/Board.cshtml";
+}
+
+<div style="margin:0 300px 0 300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                <div class="page-title text-center">
+                    <h2><span class="primary">Board</span></h2>
+                    <h3>Are you sure you want to delete this?</h3>
+                    <hr />
+                </div>
+                <div>
+                    <dl class="dl-horizontal" style="color:white;font-size:20px;
+                    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        <dt>
+                            제목@*@Html.DisplayNameFor(model => model.Subject)*@
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Subject)
+                        </dd>
+                        <dt>
+                            내용@*@Html.DisplayNameFor(model => model.Contents)*@
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Contents)
+                        </dd>
+                        <dt>
+                            작성자@*@Html.DisplayNameFor(model => model.Writer)*@
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Writer)
+                        </dd>
+                        <dt>
+                            등록일@*@Html.DisplayNameFor(model => model.RegDate)*@
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RegDate)
+                        </dd>
+                        <dt>
+                            조회수@*@Html.DisplayNameFor(model => model.ReadCount)*@
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.ReadCount)
+                        </dd>
+                    </dl>
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="id" />
+                            <input type="submit" value="삭제" class="btn-primary" style="margin-top:0px;" /> 
+                            <a class="btn-primary"
+                               style="background-color:cornflowerblue"
+                               asp-action="Index">뒤로가기</a>
+                        </form>
+
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.row -->
+</div> <!-- /.container -->
