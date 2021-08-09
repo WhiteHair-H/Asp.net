@@ -16,7 +16,6 @@
   <img height="40" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/logo.png">
 </p>
 
----------------
 
 <br>
 
@@ -34,7 +33,7 @@
 <br>
 
 ### 순서
----------------
+
 1. 부트스트랩 선정
 - https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
 
