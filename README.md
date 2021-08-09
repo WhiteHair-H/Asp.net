@@ -8,11 +8,15 @@
 
 <br>
 
+---------------
+
 ### 사용툴
 <p align='left'>
   <img height="40" src="https://img.icons8.com/color/48/000000/visual-studio-2019.png">
   <img height="40" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/logo.png">
 </p>
+
+---------------
 
 <br>
 
@@ -25,19 +29,28 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 </p>
 
+---------------
+
 <br>
 
 ### 순서
+---------------
 1. 부트스트랩 선정
 - https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
+
 2. Visual Studio MVC 솔루션으로 제작
+- Model, View, Cotroller
+
 3. 각 페이지 어떤 기능 삽입할지 페이지 선정
 -  로그인, 회원가입, 게시판, 연락처
+
 4. DB와 연동작업을 통해서 Appsettings - DataSource 설정
 -  ConnectionStrings - MS-SQL 연동작업
+
 5. MVC S/W를 사용순서
 - DB Model 생성 -> Model View(화면) 생성 -> Model Controller 생성(스캐풀딩 사용)
 
+---------------
 
 <br>
 
@@ -46,6 +59,8 @@
 2. 연락처
 3. 회원가입 
 4. 로그인 
+
+---------------
 
 <br>
 
