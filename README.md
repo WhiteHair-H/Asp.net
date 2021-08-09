@@ -21,7 +21,7 @@ MVC기반 개인 홈페이지 제작
 5. 기능이 들어가는 페이지와 DB 연동
 6. MVC S/W를 사용하여 DB Model 생성 -> Model View(화면) -> Model Controller 생성(스캐풀딩 사용) 
 
-[추가기능](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
+[](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
 1. 게시판 
 2. 연락처
 3. 회원가입 
