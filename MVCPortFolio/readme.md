@@ -165,6 +165,35 @@ public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact 
     }
 ```
 
+<br>
+
+### Models
+- DB와 연동작업을 위해서 모델생성
+```
+public class Contact
+  {
+    [Key]
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "성함은 필수입니다")]
+    [DataType(DataType.Text)]
+    [StringLength(50)]
+    public string Name { get; set; }
+
+    [Required(ErrorMessage = "이메일은 필수입니다")]
+    [DataType(DataType.EmailAddress)]
+    public string Email { get; set; }
+
+    [Required(ErrorMessage = "내용은 필수입니다")]
+    [DataType(DataType.Text)]
+    public string Contents { get; set; }
+
+    [DataType(DataType.DateTime)]
+    public DateTime Regdate { get; set; }
+  }
+```
+
+
 ## 회원가입
 <p align='center'>
   <img width="70%" height="50%" src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif">
