@@ -99,6 +99,8 @@ public class Board
 
 ### Views
 - View를 통하여 Detail, Create, Edit, Delete 
+
+
 ```
 <tbody>
     @foreach (var item in Model)
