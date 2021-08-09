@@ -128,13 +128,42 @@ public class Board
 </tbody>
 ```
 
-
+<br>
 
 ## 연락처
 <p align='center'>
   <img width="70%" height="50%" src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/%EC%97%B0%EB%9D%BD%EC%B2%98.gif">
 </p>
 
+### Controller
+- 스캐풀딩을 통해서 Index 기능 추가
+```
+public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
+```
+- 이름, 이메일, 내용 저장 기능 추가
+```
+public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
+    {
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                contact.Regdate = DateTime.Now;
+                _context.Add(contact); // 메모리상에 데이터가 올라감
+                await _context.SaveChangesAsync(); // DB저장 , 커밋
+
+                ViewBag.Message = "감사합니다. 연락드리겠습니다.";
+                ModelState.Clear();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = $"예외가 발생했습니다. {ex.InnerException}";
+                ModelState.Clear();
+            }
+        }
+        return View();
+    }
+```
 
 ## 회원가입
 <p align='center'>
