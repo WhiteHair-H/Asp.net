@@ -28,12 +28,16 @@
 <br>
 
 ### 순서
-1. 부트스트랩 선정 - https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
-2. Visual Studio MVC 솔루션 제작
+1. 부트스트랩 선정
+- https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
+2. Visual Studio MVC 솔루션으로 제작
 3. 각 페이지 어떤 기능 삽입할지 페이지 선정
+-  로그인, 회원가입, 게시판, 연락처
 4. DB와 연동작업을 통해서 Appsettings - DataSource 설정
-5. 기능이 들어가는 페이지와 DB 연동
-6. MVC S/W를 사용하여 DB Model 생성 -> Model View(화면) -> Model Controller 생성(스캐풀딩 사용) 
+-  ConnectionStrings - MS-SQL 연동작업
+5. MVC S/W를 사용순서
+- DB Model 생성 -> Model View(화면) 생성 -> Model Controller 생성(스캐풀딩 사용)
+
 
 <br>
 
