@@ -193,14 +193,122 @@ public class Contact
   }
 ```
 
+<br>
+
+### Views
+- 연락처 뷰 
+```
+<div class="input-field message">
+    <span class="input-icon"><i class="tf-pencil2"></i></span>
+    <textarea name="Contents" id="message" asp-for="Contents" class="form-control" placeholder="Write your message"></textarea>
+    <span asp-validation-for="Contents" class="text-danger"></span>
+</div>
+<div class="input-field">
+    <span class="btn-border">
+        <button type="submit" class="btn btn-primary btn-custom-border text-uppercase">Send Message now</button>
+    </span>
+</div>
+<div class="col">
+    @if (ViewBag.Message != null)
+    {
+        <span>@ViewBag.Message</span>
+    }
+</div>
+```
+
+<br>
 
 ## 회원가입
 <p align='center'>
   <img width="70%" height="50%" src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.gif">
 </p>
 
+<br>
+
+### Controller
+- 스캐풀딩을 통해서 SignUp 기능 추가
+```
+public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User user)
+```
+
+<br>
+
+### Models
+- DB와 연동작업을 위해서 모델생성
+```
+public class User
+    {
+        // 유저번호
+        [Key]
+        public int UserNo { get; set; }
+        // 유저이름
+        [Required(ErrorMessage = "이름을 입력하세요!")]
+        [DataType(DataType.Text)]
+        [StringLength(200)]
+        public string UserName { get; set; }
+        // 유저이메일
+        [Required(ErrorMessage = "이메일을 입력하세요!")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(200)]
+        public string Email { get; set; }
+        // 유저패스워드
+        [Required(ErrorMessage = "비밀번호를 입력하세요!")]
+        [DataType(DataType.Password)]
+        [StringLength(200)]
+        public string Password { get; set; }
+    }
+```
+
+<br>
+### Views
+- 회원가입 뷰 생성
+```
+<form asp-action="SignUp" class="form-signup">
+    <h2 class="form-signin-heading">SignUp</h2>
+
+    <input asp-for="UserName" type="text" class="form-control" name="UserName"
+           placeholder="UserName" autofocus="" />
+
+    <input asp-for="Email" type="email" class="form-control" name="Email"
+           placeholder="Email" style="margin-bottom:0" />
+
+    <input asp-for="Password" type="password" class="form-control" name="Password" placeholder="Password" />
+
+    <div>
+        <button asp-controller="Account" asp-action="SignUp" class="btn btn-lg btn-primary btn-block" type="submit">Sign-Up</button>
+    </div>
+
+</form>
+```
+
+<br>
 
 ## 로그인 
 <p align='center'>
   <img width="70%" height="50%" src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/%EB%A1%9C%EA%B7%B8%EC%9D%B8.gif">
 </p>
+
+### Controller
+- 스캐풀딩을 통해서 Create, Detail, Delete , Edit 기능 추가
+```
+public async Task<IActionResult> Create([Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
+public async Task<IActionResult> Details(int? id)
+public async Task<IActionResult> Delete(int? id)
+public async Task<IActionResult> Edit(int id, [Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
+```
+
+<br>
+
+### Models
+- DB와 연동작업을 위해서 모델생성
+```
+
+```
+
+<br>
+### Views
+- View를 통하여 Detail, Create, Edit, Delete 
+```
+
+```
+
