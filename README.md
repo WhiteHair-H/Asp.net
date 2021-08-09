@@ -54,7 +54,7 @@
 
 <br>
 
-### [기능소개 및 ](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
+### [기능소개 및 코드분석](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
 1. 게시판 
 2. 연락처
 3. 회원가입 
