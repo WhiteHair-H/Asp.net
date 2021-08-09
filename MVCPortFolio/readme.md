@@ -84,7 +84,7 @@ public class Board
                 @Html.DisplayFor(modelItem => item.id)
             </td>
             <td>
-                @*제목을 눌렀을 때 Details칸으로 이동하게 만듬*@
+                @*제목을 눌렀을 때 Details칸으로 이동*@
                 <a asp-action="Details" asp-route-id="@item.id">
                     @Html.DisplayFor(modelItem => item.Subject)
                 </a>
