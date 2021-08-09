@@ -6,10 +6,23 @@ MVC기반 개인 홈페이지 제작
   <img src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/Complete.gif " width="40%" height="40%"/>
 </p>
 
+<br>
 
+### 사용툴
+<p align='left'>
+  - <img height="40" src="https://img.icons8.com/color/48/000000/visual-studio-2019.png">
+  - <img height="40" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/logo.png">
+</p>
 
-사용툴
-- Visual Studio, MS-SQL
+<br>
+
+### 개발언어
+<p align='left'>
+  - <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white"/>
+  - <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
+</p>
+
+<br>
 
 순서
 1. 부트스트랩 선정 - https://themefisher.com/products/phantom-best-bootstrap-portfolio-template/
@@ -19,7 +32,7 @@ MVC기반 개인 홈페이지 제작
 5. 기능이 들어가는 페이지와 DB 연동
 6. MVC S/W를 사용하여 DB Model 생성 -> Model View(화면) -> Model Controller 생성(스캐풀딩 사용) 
 
-[기능소개](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
+### [기능소개](https://github.com/WhiteHair-H/Asp.net/tree/main/MVCPortFolio)
 1. 게시판 
 2. 연락처
 3. 회원가입 
