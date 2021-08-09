@@ -10,16 +10,16 @@ MVC기반 개인 홈페이지 제작
 
 ### 사용툴
 <p align='left'>
-  - <img height="40" src="https://img.icons8.com/color/48/000000/visual-studio-2019.png">
-  - <img height="40" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/logo.png">
+  <img height="40" src="https://img.icons8.com/color/48/000000/visual-studio-2019.png">
+  <img height="40" src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/10/logo.png">
 </p>
 
 <br>
 
 ### 개발언어
 <p align='left'>
-  - <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white"/>
-  - <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white"/>
+  <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
 </p>
 
 <br>
