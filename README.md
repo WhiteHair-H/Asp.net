@@ -22,13 +22,14 @@ MVC기반 개인 홈페이지 제작
 6. MVC S/W를 사용하여 DB Model 생성 -> Model View(화면) -> Model Controller 생성(스캐풀딩 사용) 
 
 추가기능
-1. 게시판
-2. 연락처
-3. 회원가입
-4. 로그인 
-
-
-
+1. [게시판](https://github.com/SeoDongWoo1216/StudyDesktopApp/tree/main/WinFormApp/210315_WinFormAdvancedBank/210315_170_WinChartApp)
+- 
+2. [연락처](https://github.com/SeoDongWoo1216/StudyDesktopApp/tree/main/WinFormApp/210315_WinFormAdvancedBank/210315_170_WinChartApp)
+- 
+3. [회원가입](https://github.com/SeoDongWoo1216/StudyDesktopApp/tree/main/WinFormApp/210315_WinFormAdvancedBank/210315_170_WinChartApp)
+- 
+4. [로그인](https://github.com/SeoDongWoo1216/StudyDesktopApp/tree/main/WinFormApp/210315_WinFormAdvancedBank/210315_170_WinChartApp)
+- 
 
 
 추가해야할 작업들
