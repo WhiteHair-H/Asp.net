@@ -15,7 +15,9 @@
 <br>
 
 ### Controller
-- 스캐풀딩을 통해서 Create, Detail, Delete , Edit 기능 추가
+
+<p align='center'>스캐풀딩을 통해서 Create, Detail, Delete , Edit 기능 추가</p>
+
 ```
 public async Task<IActionResult> Create([Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
 public async Task<IActionResult> Details(int? id)
@@ -23,7 +25,9 @@ public async Task<IActionResult> Delete(int? id)
 public async Task<IActionResult> Edit(int id, [Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
 ```
 
-- 클릭시 조회수 UP!
+<p align='center'>클릭시 조회수 UP!</p>
+
+
 ```
 public async Task<IActionResult> Details(int? id)
         {
@@ -51,6 +55,7 @@ public async Task<IActionResult> Details(int? id)
 <br>
 
 ### DB연결
+<p align='center'>ConnectionStrings 사용</p>
 ```
 {
   "ConnectionStrings": {
@@ -71,7 +76,8 @@ public async Task<IActionResult> Details(int? id)
 <br>
 
 ### Models
-- DB와 연동작업을 위해서 모델생성
+<p align='center'>DB와 연동작업을 위해서 모델생성</p>
+
 ```
 public class Board
     {
@@ -98,8 +104,7 @@ public class Board
 <br>
 
 ### Views
-- View를 통하여 Detail, Create, Edit, Delete 생성
-
+<p align='center'>View를 통하여 Detail, Create, Edit, Delete 생성</p>
 
 ```
 <tbody>
@@ -142,11 +147,13 @@ public class Board
 </p>
 
 ### Controller
-- 스캐풀딩을 통해서 Index 기능 추가
+<p align='center'>스캐풀딩을 통해서 Index 기능 추가</p>
+
 ```
 public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
 ```
-- 이름, 이메일, 내용 저장 기능 추가
+<p align='center'>이름, 이메일, 내용 저장 기능 추가</p>
+
 ```
 public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
     {
@@ -174,7 +181,8 @@ public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact 
 <br>
 
 ### Models
-- DB와 연동작업을 위해서 모델생성
+<p align='center'>DB와 연동작업을 위해서 모델생성</p>
+
 ```
 public class Contact
   {
@@ -202,7 +210,7 @@ public class Contact
 <br>
 
 ### Views
-- 연락처 뷰 
+<p align='center'>연락처 뷰</p>
 ```
 <div class="input-field message">
     <span class="input-icon"><i class="tf-pencil2"></i></span>
@@ -232,7 +240,7 @@ public class Contact
 <br>
 
 ### Controller
-- 스캐풀딩을 통해서 SignUp 기능 추가
+<p align='center'>스캐풀딩을 통해서 SignUp 생성</p>
 ```
 public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User user)
 ```
@@ -240,7 +248,7 @@ public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User u
 <br>
 
 ### Models
-- DB와 연동작업을 위해서 모델생성
+<p align='center'>DB와 연동작업을 위해서 모델생성</p>
 ```
 public class User
     {
@@ -267,7 +275,7 @@ public class User
 
 <br>
 ### Views
-- 회원가입 뷰 생성
+<p align='center'>회원가입 뷰 생성</p>
 ```
 <form asp-action="SignUp" class="form-signup">
     <h2 class="form-signin-heading">SignUp</h2>
@@ -295,18 +303,15 @@ public class User
 </p>
 
 ### Controller
-- 스캐풀딩을 통해서 Create, Detail, Delete , Edit 기능 추가
+<p align='center'>스캐풀딩을 통해서 Login 생성</p>
 ```
-public async Task<IActionResult> Create([Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
-public async Task<IActionResult> Details(int? id)
-public async Task<IActionResult> Delete(int? id)
-public async Task<IActionResult> Edit(int id, [Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
+public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 ```
 
 <br>
 
 ### Models
-- DB와 연동작업을 위해서 모델생성
+<p align='center'>DB와 연동작업을 위해서 모델생성</p>
 ```
 public async Task<IActionResult> Login([Bind("Email,Password")] User user)
         {
@@ -332,7 +337,7 @@ public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 
         }
 ```
-- DB에 저장되어 있는 Email과 Password가 일치여부
+<p align='center'>DB에 저장되어 있는 Email과 Password가 일치여부</p>
 ```
 private User checkAccount(string email, string password)
 {
@@ -351,7 +356,7 @@ public IActionResult Logout()
 <br>
 
 ### Views
-- 로그인 뷰 생성
+<p align='center'>로그인 뷰 생성</p>
 ```
 <h2 class="form-signin-heading">Login</h2>
 <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" autofocus="" />
