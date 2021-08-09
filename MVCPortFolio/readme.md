@@ -302,13 +302,69 @@ public async Task<IActionResult> Edit(int id, [Bind("id,Subject,Contents,Writer,
 ### Models
 - DB와 연동작업을 위해서 모델생성
 ```
+public async Task<IActionResult> Login([Bind("Email,Password")] User user)
+        {
 
+            if (!ModelState.IsValid)
+            {
+                var result = checkAccount(user.Email, user.Password);
+                if (result == null)
+                {
+                    // 계정이 없을 경우 화면을 Login 제자리
+                    ViewBag.Message = "해당계정이 없습니다";
+                    return View("Login");
+                }
+                else
+                {
+                    // 로그인할 경우 Home/Home으로 이동
+                    HttpContext.Session.SetString("UserEmail", result.Email);
+                    return RedirectToAction("Home", "Home");
+                }
+            }
+
+            return View("Login");
+
+        }
+```
+- DB에 저장되어 있는 Email과 Password가 일치여부
+```
+private User checkAccount(string email, string password)
+{
+    return _context.User.SingleOrDefault(a => a.Email.Equals(email) && a.Password.Equals(password));
+}
+```
+- 로그아웃
+```
+public IActionResult Logout()
+{
+    HttpContext.Session.Clear();
+    return RedirectToAction("Home", "Home"); // Home/Home으로 이동
+}
 ```
 
 <br>
-### Views
-- View를 통하여 Detail, Create, Edit, Delete 
-```
 
+### Views
+- 로그인 뷰 생성
+```
+<h2 class="form-signin-heading">Login</h2>
+<input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" autofocus="" />
+<span asp-validation-for="Email" class="text-danger"></span>
+
+<input asp-for="Password" type="password" class="form-control" name="password" placeholder="Password" style="margin-bottom:0"/>
+<span asp-validation-for="Password" class="text-danger"></span>
+
+<button asp-action="Login" class="btn btn-lg btn-primary btn-block" type="submit"
+        style="margin-top:10px">Login</button>
+<div class="label-primary"
+     style="text-align:center; color:white;
+            margin-top:10px; border-radius:5px;
+            margin-bottom:10px;
+            font-weight:bolder;">
+    @if (ViewBag.Message != null)
+    {
+        <span>@ViewBag.Message</span>
+    }
+</div>
 ```
 
