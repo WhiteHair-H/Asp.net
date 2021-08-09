@@ -46,6 +46,26 @@ public async Task<IActionResult> Details(int? id)
 
 <br>
 
+### DB연결
+```
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=127.0.0.1;Initial Catalog=MVCPortFolio;User ID=sa;Password=*********;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+
+
+<br>
+
 ### Models
 - DB와 연동작업을 위해서 모델생성
 ```
