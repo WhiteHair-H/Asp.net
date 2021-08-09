@@ -55,7 +55,9 @@ public async Task<IActionResult> Details(int? id)
 <br>
 
 ### DB연결
+
 <p align='center'>ConnectionStrings 사용</p>
+
 ```
 {
   "ConnectionStrings": {
@@ -76,6 +78,7 @@ public async Task<IActionResult> Details(int? id)
 <br>
 
 ### Models
+
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
 
 ```
@@ -104,6 +107,7 @@ public class Board
 <br>
 
 ### Views
+
 <p align='center'>View를 통하여 Detail, Create, Edit, Delete 생성</p>
 
 ```
@@ -152,6 +156,7 @@ public class Board
 ```
 public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
 ```
+
 <p align='center'>이름, 이메일, 내용 저장 기능 추가</p>
 
 ```
@@ -240,7 +245,9 @@ public class Contact
 <br>
 
 ### Controller
+
 <p align='center'>스캐풀딩을 통해서 SignUp 생성</p>
+
 ```
 public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User user)
 ```
@@ -248,7 +255,9 @@ public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User u
 <br>
 
 ### Models
+
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
+
 ```
 public class User
     {
@@ -274,8 +283,11 @@ public class User
 ```
 
 <br>
+
 ### Views
+
 <p align='center'>회원가입 뷰 생성</p>
+
 ```
 <form asp-action="SignUp" class="form-signup">
     <h2 class="form-signin-heading">SignUp</h2>
@@ -303,7 +315,9 @@ public class User
 </p>
 
 ### Controller
+
 <p align='center'>스캐풀딩을 통해서 Login 생성</p>
+
 ```
 public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 ```
@@ -311,7 +325,9 @@ public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 <br>
 
 ### Models
+
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
+
 ```
 public async Task<IActionResult> Login([Bind("Email,Password")] User user)
         {
@@ -337,14 +353,18 @@ public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 
         }
 ```
+
 <p align='center'>DB에 저장되어 있는 Email과 Password가 일치여부</p>
+
 ```
 private User checkAccount(string email, string password)
 {
     return _context.User.SingleOrDefault(a => a.Email.Equals(email) && a.Password.Equals(password));
 }
 ```
-- 로그아웃
+
+<p align='center'>로그아웃 생성</p>
+
 ```
 public IActionResult Logout()
 {
@@ -356,7 +376,9 @@ public IActionResult Logout()
 <br>
 
 ### Views
+
 <p align='center'>로그인 뷰 생성</p>
+
 ```
 <h2 class="form-signin-heading">Login</h2>
 <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" autofocus="" />
