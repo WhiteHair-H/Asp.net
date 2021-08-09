@@ -98,7 +98,7 @@ public class Board
 <br>
 
 ### Views
-- View를 통하여 Detail, Create, Edit, Delete 
+- View를 통하여 Detail, Create, Edit, Delete 생성
 
 
 ```
