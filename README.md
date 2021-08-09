@@ -3,9 +3,7 @@ MVC기반 개인 홈페이지 제작
 
 현재까지 완성본
 <p align='left'>
-  <a href="https://github.com/WhiteHair-H">
-    <img src="https://github.com/WhiteHair-H/MiniProject_SimpleMRP/blob/main/MRPAPP/MRPAPP/Resources/profile.jpg " width="40%" height="40%"/>
-  </a>
+  <img src="https://github.com/WhiteHair-H/Asp.net/blob/main/MVCPortFolio/IntroFile/GIF/Complete.gif " width="40%" height="40%"/>
 </p>
 
 
