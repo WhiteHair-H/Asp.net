@@ -8,6 +8,7 @@
     5. Home 을 중심으로 생성할 뷰 생성
     6. Home.cshtml에서 asp-area="" asp-controller="Home" asp-action="Welcome" 추가하여 각각 페이지에 들어갈수있게 추가해주기
     7. css가 먹히지 않을 때 파일앞에 ~/ 통해서 명시해주기
+
     8/1
     8. 각각 페이지에 이전, 다음페이지 asp-controller="Home" asp-action="resume" 추가하여 페이지 넘어갈수 있게 하기
     9. MS-SQL에서 게시판 DB설계
@@ -21,6 +22,7 @@
     16. rendorbody 오류는 @RenderBody() 생성해주기
     17. cshtml나오지 않을 경우 css, javascript 추가
     18. index.cshtml에 위치 잡아주기 - @RenderBody()는 무조건 레이아웃에만 설정
+
     8/2
     19. 게시판 controller에서 조회수, 날짜 readonly로 수정
     20. 인덱스 추가(DB = id)
@@ -38,17 +40,19 @@
         Or Message 칸 제거 -> <span asp-validation-for="Contents" class="text-danger"></span>
             and name 바꿔주기 -> textarea name="Contents"
     24. Contact 컨트롤 DB 연동작업 성공
+
+    8/6
     25. 로그인 컨트롤 창, DB 연동 작업 완료
     26. 로그인후 로그아웃 버튼, return하는 using 문 및 함수
         @using Microsoft.AspNetCore.Http
         @inject IHttpContextAccessor hca
+    8/8
     27. 로그아웃 클릭시 알림창 추가
     28. 회원가입 페이지 추가후 DB 연동 작업 및 로그인했을 때 일치여부 확인완료
 
     Big todo
     1. 아이콘, 글, 글자크기 , 사진, 이전, 다음 페이지 글자 등 디자인 요소 수정
-    2. 로그인 컨트롤 생성 및 DB연결작업
-    3. 각 페이지 타이틀 수정
-    4. 손이 많이 가지 않게 Partial Page(부분뷰)를 통해서 깔끔하게 디자인
-    5. 로그인 했을 때 로그인되었다는 알림 , 회원가입 했을 때 회원가입되었다는 알림
+    2. 각 페이지 타이틀 수정
+    3. 손이 많이 가지 않게 Partial Page(부분뷰)를 통해서 깔끔하게 디자인
+    4. 로그인 했을 때 로그인되었다는 알림 , 회원가입 했을 때 회원가입되었다는 알림
 
