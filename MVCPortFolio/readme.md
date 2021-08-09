@@ -18,7 +18,7 @@
 
 <p align='center'>스캐풀딩을 통해서 Create, Detail, Delete , Edit 기능 추가</p>
 
-```
+```C#
 public async Task<IActionResult> Create([Bind("id,Subject,Contents,Writer,RegDate,ReadCount")] Board board)
 public async Task<IActionResult> Details(int? id)
 public async Task<IActionResult> Delete(int? id)
@@ -28,7 +28,7 @@ public async Task<IActionResult> Edit(int id, [Bind("id,Subject,Contents,Writer,
 <p align='center'>클릭시 조회수 UP!</p>
 
 
-```
+```C#
 public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -58,7 +58,7 @@ public async Task<IActionResult> Details(int? id)
 
 <p align='center'>ConnectionStrings 사용</p>
 
-```
+```JSON
 {
   "ConnectionStrings": {
     "DefaultConnection": "Data Source=127.0.0.1;Initial Catalog=MVCPortFolio;User ID=sa;Password=*********;"
@@ -81,7 +81,7 @@ public async Task<IActionResult> Details(int? id)
 
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
 
-```
+```C#
 public class Board
     {
         [Key]
@@ -110,7 +110,7 @@ public class Board
 
 <p align='center'>View를 통하여 Detail, Create, Edit, Delete 생성</p>
 
-```
+```HTML
 <tbody>
     @foreach (var item in Model)
     {
@@ -153,13 +153,13 @@ public class Board
 ### Controller
 <p align='center'>스캐풀딩을 통해서 Index 기능 추가</p>
 
-```
+```C#
 public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
 ```
 
 <p align='center'>이름, 이메일, 내용 저장 기능 추가</p>
 
-```
+```C#
 public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact contact)
     {
         if (ModelState.IsValid)
@@ -188,7 +188,7 @@ public async Task<IActionResult> Index([Bind("Id,Name,Email,Contents")] Contact 
 ### Models
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
 
-```
+```C#
 public class Contact
   {
     [Key]
@@ -216,7 +216,8 @@ public class Contact
 
 ### Views
 <p align='center'>연락처 뷰</p>
-```
+
+```C#
 <div class="input-field message">
     <span class="input-icon"><i class="tf-pencil2"></i></span>
     <textarea name="Contents" id="message" asp-for="Contents" class="form-control" placeholder="Write your message"></textarea>
@@ -248,7 +249,7 @@ public class Contact
 
 <p align='center'>스캐풀딩을 통해서 SignUp 생성</p>
 
-```
+```C#
 public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User user)
 ```
 
@@ -258,7 +259,7 @@ public async Task<IActionResult> SignUp([Bind("UserName,Email,Password")] User u
 
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
 
-```
+```C#
 public class User
     {
         // 유저번호
@@ -288,7 +289,7 @@ public class User
 
 <p align='center'>회원가입 뷰 생성</p>
 
-```
+```HTML
 <form asp-action="SignUp" class="form-signup">
     <h2 class="form-signin-heading">SignUp</h2>
 
@@ -318,7 +319,7 @@ public class User
 
 <p align='center'>스캐풀딩을 통해서 Login 생성</p>
 
-```
+```C#
 public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 ```
 
@@ -328,7 +329,7 @@ public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 
 <p align='center'>DB와 연동작업을 위해서 모델생성</p>
 
-```
+```C#
 public async Task<IActionResult> Login([Bind("Email,Password")] User user)
         {
 
@@ -356,7 +357,7 @@ public async Task<IActionResult> Login([Bind("Email,Password")] User user)
 
 <p align='center'>DB에 저장되어 있는 Email과 Password가 일치여부</p>
 
-```
+```C#
 private User checkAccount(string email, string password)
 {
     return _context.User.SingleOrDefault(a => a.Email.Equals(email) && a.Password.Equals(password));
@@ -365,7 +366,7 @@ private User checkAccount(string email, string password)
 
 <p align='center'>로그아웃 생성</p>
 
-```
+```C#
 public IActionResult Logout()
 {
     HttpContext.Session.Clear();
@@ -379,7 +380,7 @@ public IActionResult Logout()
 
 <p align='center'>로그인 뷰 생성</p>
 
-```
+```HTML
 <h2 class="form-signin-heading">Login</h2>
 <input asp-for="Email" type="email" class="form-control" name="email" placeholder="Email Address" autofocus="" />
 <span asp-validation-for="Email" class="text-danger"></span>
